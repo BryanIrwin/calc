@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" type="text/css" href="style.css">  
+</head>
+<body>
+    <center><h1 id="title">Guardian Hour Calculator</h1></center>
+    <div class="tab">
+      <button class="tablinks" onclick="openDay(event, 'Tuesday')">     Tuesday             </button>
+      <button class="tablinks" onclick="openDay(event, 'Wednesday')">   Wednesday           </button>
+      <button class="tablinks" onclick="openDay(event, 'Thursday')">    Thursday            </button>
+      <button class="tablinks" onclick="openDay(event, 'Friday')">      Friday              </button>
+      <button class="tablinks" onclick="openDay(event, 'Saturday')">    Saturday            </button>
+      <button class="tablinks" onclick="openDay(event, 'Sunday')">      Sunday              </button>
+      <button class="tablinks" onclick="openDay(event, 'Monday')">      Monday              </button>
+      <button class="tablinks"> = </button>
+      <button class="tablinks" onclick="openDay(event, 'Total')">       Total               </button> 
+ <!--     <button class="tablinks"  id="settings" onclick="openDay(event, 'Settings')">      Settings    </button> -->
+    </div>
+    
+    <div id="Tuesday" class="tabcontent">        
+        <h1>Hours Worked For Tuesday</h1>
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_tuesday" onchange="calculateDay_hours( startTime_tuesday.value, endTime_tuesday.value, totalHours_tuesday, 0, tue_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_tuesday" onchange=" calculateDay_hours( startTime_tuesday.value, endTime_tuesday.value, totalHours_tuesday, 0, tue_hours ) "></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_tuesday">Hours Worked</label>
+                </td>
+            </tr>
+        </table>  
+        <br>             
+    </div> 
+    <div id="Wednesday" class="tabcontent"> 
+        <h1>Hours Worked For Wednesday</h1>        
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_wednesday" onchange="calculateDay_hours( startTime_wednesday.value, endTime_wednesday.value, totalHours_wednesday, 1, wed_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_wednesday" onchange="calculateDay_hours( startTime_wednesday.value, endTime_wednesday.value, totalHours_wednesday, 1, wed_hours )"></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_wednesday">Hours Worked</label>
+                </td>
+
+                </tr>
+        </table>  
+        <br>             
+    </div>
+    <div id="Thursday" class="tabcontent">
+        <h1>Hours Worked For Thursday</h1>        
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_thursday" onchange="calculateDay_hours( startTime_thursday.value, endTime_thursday.value, totalHours_wednesday, 2, thur_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_thursday" onchange="calculateDay_hours( startTime_thursday.value, endTime_thursday.value, totalHours_thursday, 2, thur_hours )"></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_thursday">Hours Worked</label>
+                </td>
+
+            </tr>
+        </table>  
+        <br>     
+    </div>
+    <div id="Friday" class="tabcontent">
+        <h1>Hours Worked For Friday</h1>      
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_friday" onchange="calculateDay_hours( startTime_friday.value, endTime_friday.value, totalHours_friday, 3, fri_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_friday" onchange="calculateDay_hours( startTime_friday.value, endTime_friday.value, totalHours_friday, 3, fri_hours )"></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_friday">Hours Worked</label>
+                </td>
+
+               
+               
+            </tr>
+        </table>  
+        <br>     
+    </div>
+    <div id="Saturday" class="tabcontent">
+        <h1>Hours Worked For Saturday</h1>      
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_saturday" onchange="calculateDay_hours( startTime_saturday.value, endTime_saturday.value, totalHours_saturday, 4, sat_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_saturday" onchange="calculateDay_hours( startTime_saturday.value, endTime_saturday.value, totalHours_saturday, 4, sat_hours )"></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_saturday">Hours Worked</label>
+                </td>
+
+            </tr>
+        </table>  
+        <br>     
+    </div>
+    <div id="Sunday" class="tabcontent">
+        <h1>Hours Worked For Sunday</h1>      
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_sunday"onchange="calculateDay_hours( startTime_sunday.value, endTime_sunday.value, totalHours_sunday, 5, sun_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_sunday" onchange="calculateDay_hours( startTime_sunday.value, endTime_sunday.value, totalHours_sunday, 5, sun_hours )"></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_sunday">Hours Worked</label>
+                </td>
+            </tr>
+        </table>  
+        <br>     
+    </div>
+    <div id="Monday" class="tabcontent">
+        <h1>Hours Worked For Monday</h1>      
+        <table>
+            <tr>
+                <td><label for="startTimes">Start Time</label></td>
+                <td><label for="endTimes">End Time</label></td>
+                <td><label for="total">Total Hours</label></td>
+            </tr>
+            <tr>
+                <!--Start Time-->
+                <td>
+                    <select id="startTime_monday" onchange="calculateDay_hours( startTime_monday.value, endTime_monday.value, totalHours_monday, 6, mon_hours )"></select>        
+                </td>
+
+                <!--End Time-->
+                <td>
+                    <select id="endTime_monday" onchange="calculateDay_hours( startTime_monday.value, endTime_monday.value, totalHours_monday, 6, mon_hours )" ></select>
+                </td>
+
+                <!--Total Hours-->
+                <td>
+                    <label id="totalHours_monday">Hours Worked</label>
+                </td>
+
+       
+            </tr>
+        </table>  
+        <br>     
+    </div>
+    <div id="Total" class="tabcontent">       
+       <h2 class="h3_day">Calculated week's hours, hourly rate, and total.</h2> 
+       <br>
+       <table>
+            <tr>
+                <td>Tuesday</td>
+                <td>Wednesday</td>
+                <td>Thursday</td>
+                <td>Friday</td>
+                <td>Saturday</td>
+                <td>Sunday</td>
+                <td>Monday</td>
+                <td></td>
+                <td>Total Week Hours</td>
+                <td>Hourly Rate</td>                
+                <td>Total Owed</td>                
+            </tr>
+            <tr>
+                <td><label id="tue_hours"></label></td>
+                <td><label id="wed_hours"></label></td>
+                <td><label id="thur_hours"></label></td>
+                <td><label id="fri_hours"></label></td>
+                <td><label id="sat_hours"></label></td>
+                <td><label id="sun_hours"></label></td>
+                <td><label id="mon_hours"></label></td>
+                <td>-</td>
+                <td><label id="totalHoursForWeek"></label></td>
+                <td><select id="hourly_rate"><option></option></select></td>
+                <td><label id="total_owed"></label></td>
+                <td>
+                    <button class="calculate_week" onclick="calculate_week_total_plus_hourlyRate();">Calculate</button><br>                    
+                </td>
+            </tr>                
+        </table>        
+        <br><br>
+    </div>
+  <!-- <div id="Settings" class="tabcontent">
+        <br>
+        <table id="settings-table">
+            <tr id="setting-groups">
+                <td><h1 id="settings-tab">App Settings</h1></td>
+                <td><h1 id="settings-tab">User Settings</h1></td>
+            </tr>
+            <tr id="settings-table">
+                <td>
+                    <label>Start Time</label>
+                    <select id="app_startTimes"></select>
+                </td>                
+                <td>user settings</td>            
+            </tr><br>
+            <tr id="settings-table">
+                <td>
+                    <label >End Time</label>
+                    <select id="app_endTimes"></select>
+                </td>
+            </tr>
+        </table><br><br>
+        <center><button id="saveSettings" onclick="saveSettings()">Save All Settings</button></center>
+    </div>
+--> 
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>
